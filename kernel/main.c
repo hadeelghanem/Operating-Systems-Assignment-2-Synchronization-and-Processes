@@ -10,6 +10,7 @@ volatile static int started = 0;
 void
 main()
 {
+  extern void init_peterson(void);
   if(cpuid() == 0){
     consoleinit();
     printfinit();
@@ -20,6 +21,7 @@ main()
     kvminit();       // create kernel page table
     kvminithart();   // turn on paging
     procinit();      // process table
+    init_peterson(); //task 1
     trapinit();      // trap vectors
     trapinithart();  // install kernel trap vector
     plicinit();      // set up interrupt controller

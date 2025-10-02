@@ -20,3 +20,9 @@
 #define SYS_link   19
 #define SYS_mkdir  20
 #define SYS_close  21
+
+//added for task 1
+#define SYS_peterson_create 22 //use appropriate syscall numbers
+#define SYS_peterson_acquire 23 //these should be the next available syscall numbers
+#define SYS_peterson_release 24 //in your xv6 implementation
+#define SYS_peterson_destroy 25

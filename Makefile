@@ -3,6 +3,7 @@ U=user
 
 OBJS = \
   $K/entry.o \
+  $K/peterson.o \
   $K/start.o \
   $K/console.o \
   $K/printf.o \
@@ -87,7 +88,7 @@ $U/initcode: $U/initcode.S
 tags: $(OBJS) _init
 	etags *.S *.c
 
-ULIB = $U/ulib.o $U/usys.o $U/printf.o $U/umalloc.o
+ULIB = $U/ulib.o $U/usys.o $U/printf.o $U/umalloc.o $U/libtournament.o
 
 _%: %.o $(ULIB)
 	$(LD) $(LDFLAGS) -T $U/user.ld -o $@ $^
@@ -117,6 +118,7 @@ mkfs/mkfs: mkfs/mkfs.c $K/fs.h $K/param.h
 
 UPROGS=\
 	$U/_cat\
+	$U/_petersontest\
 	$U/_echo\
 	$U/_forktest\
 	$U/_grep\
@@ -132,6 +134,10 @@ UPROGS=\
 	$U/_grind\
 	$U/_wc\
 	$U/_zombie\
+	$U/_tournament\
+
+
+		
 
 fs.img: mkfs/mkfs README $(UPROGS)
 	mkfs/mkfs fs.img README $(UPROGS)

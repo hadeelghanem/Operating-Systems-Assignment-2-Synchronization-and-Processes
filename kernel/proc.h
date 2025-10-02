@@ -105,3 +105,11 @@ struct proc {
   struct inode *cwd;           // Current directory
   char name[16];               // Process name (debugging)
 };
+
+
+// Added task 1
+struct peterson_lock {
+  int active;         // Whether the lock is active (created) or not
+  int flag[2];        // Flag for each process, indicating their intent to enter critical section
+  int turn;           // Whose turn it is to enter the critical section
+};
