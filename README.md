@@ -1,4 +1,4 @@
-# Operating Systems (202.1.3031) – Assignment 2: Synchronization and Processes
+# Operating Systems – Assignment 2: Synchronization and Processes
 
 This repository contains my solution for **Assignment 2** of the Operating Systems course.  
 It is based on **xv6-riscv** and extends the kernel and user space with synchronization primitives.
