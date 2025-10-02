@@ -35,7 +35,7 @@ It is based on **xv6-riscv** and extends the kernel and user space with synchron
 
 ---
 
-## 🛠️ Skills Gained
+## Skills Gained
 - Kernel-level programming in xv6.  
 - Implementing synchronization primitives beyond spinlocks.  
 - Understanding **Peterson’s algorithm** for 2-process mutual exclusion.  
@@ -50,3 +50,6 @@ It is based on **xv6-riscv** and extends the kernel and user space with synchron
 ### Build xv6
 ```bash
 make qemu
+
+Inside xv6 shell:
+peterson_test
